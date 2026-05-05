@@ -8,7 +8,7 @@ function App() {
 
   if (token) return <Dashboard />;
 
-  if (path === "/register") return <Register />;
+  if (path.includes === "/register") return <Register />;
 
   return <Login />;
 }
