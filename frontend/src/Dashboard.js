@@ -23,7 +23,7 @@ const [assignedTo, setAssignedTo] = useState("");
   }, []);
 
   const getUsers = async () => {
-  const res = await fetch("http://localhost:5000/api/users", {
+  const res = await fetch("https://task-manager-ibsf.onrender.com/api/users", {
     headers: { Authorization: token },
   });
   const result = await res.json();
@@ -31,7 +31,7 @@ const [assignedTo, setAssignedTo] = useState("");
 };
 
   const fetchDashboard = async () => {
-    const res = await fetch("http://localhost:5000/api/tasks/dashboard", {
+    const res = await fetch("https://task-manager-ibsf.onrender.com/api/tasks/dashboard", {
       headers: { Authorization: token },
     });
     const result = await res.json();
@@ -39,7 +39,7 @@ const [assignedTo, setAssignedTo] = useState("");
   };
 
   const getTasks = async () => {
-    const res = await fetch("http://localhost:5000/api/tasks", {
+    const res = await fetch("https://task-manager-ibsf.onrender.com/api/tasks", {
       headers: { Authorization: token },
     });
     const result = await res.json();
@@ -49,7 +49,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   
   const getProjects = async () => {
-    const res = await fetch("http://localhost:5000/api/projects", {
+    const res = await fetch("https://task-manager-ibsf.onrender.com/api/projects", {
       headers: { Authorization: token },
     });
     const result = await res.json();
@@ -60,7 +60,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   const addProject = async () => {
     if (!projectName) return alert("Enter project name");
-    const res = await fetch("http://localhost:5000/api/projects", {
+    const res = await fetch("https://task-manager-ibsf.onrender.com/api/projects", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   const addTask = async () => {
     if (!title || !selectedProject) return alert("Enter title & select project");
-    const res = await fetch("http://localhost:5000/api/tasks", {
+    const res = await fetch("https://task-manager-ibsf.onrender.com/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ const [assignedTo, setAssignedTo] = useState("");
   };
 
   const updateStatus = async (id, status) => {
-    await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    await fetch(`https://task-manager-ibsf.onrender.com/api/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

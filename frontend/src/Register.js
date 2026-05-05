@@ -12,7 +12,7 @@ function Register() {
     if (password.length < 6) return alert("Password must be at least 6 characters");
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch("https://task-manager-ibsf.onrender.com/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
