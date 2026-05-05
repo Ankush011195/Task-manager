@@ -1,0 +1,66 @@
+import { useState } from "react";
+import "./Auth.css";
+
+function Register() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleRegister = async () => {
+    if (!name || !email || !password) return alert("All fields are required");
+    if (!email.includes("@")) return alert("Enter valid email");
+    if (password.length < 6) return alert("Password must be at least 6 characters");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) return alert(data.message);
+
+      alert(data.message);
+      window.location.pathname = "/";
+    } catch (err) {
+      alert("Something went wrong");
+    }
+  };
+
+  return (
+    <div className="auth-box">
+      <h2>Register</h2>
+
+      <input
+        placeholder="Enter name"
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <input
+        placeholder="Enter email"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <input
+        type="password"
+        placeholder="Enter password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <button className="primary-btn" onClick={handleRegister}>
+        Create Account
+      </button>
+
+      <button
+        className="secondary-btn"
+        onClick={() => (window.location.pathname = "/")}
+      >
+        Back to Login
+      </button>
+    </div>
+  );
+}
+
+export default Register;

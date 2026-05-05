@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 20px 50px;
+}
+
+/* ─── Header ─── */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dde1e7;
+}
+
+.top-bar h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.top-bar span {
+  font-size: 13px;
+  color: #666;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+/* ─── Stats ─── */
+.stats {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 130px;
+  background: #fff;
+  border: 1px solid #dde1e7;
+  border-radius: 8px;
+  padding: 16px 18px;
+  text-align: center;
+}
+
+.stat-box .stat-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: #3b5bdb;
+  display: block;
+}
+
+.stat-box .stat-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ─── Section Headings ─── */
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+/* ─── Form inputs ─── */
+input[type="text"],
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b5bdb;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* ─── Buttons ─── */
+button {
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #3b5bdb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2f4ac0;
+}
+
+.btn-success {
+  background: #2f9e44;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.btn-success:hover {
+  background: #258a38;
+}
+
+.btn-warning {
+  background: #f08c00;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.btn-warning:hover {
+  background: #d97800;
+}
+
+.btn-secondary {
+  background: #f1f3f5;
+  color: #444;
+  border: 1px solid #ccc;
+  margin-right: 6px;
+}
+
+.btn-secondary:hover {
+  background: #e8eaed;
+}
+
+.logout {
+  background: #e03131;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #c92a2a;
+}
+
+/* ─── Task Cards ─── */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task {
+  background: #fff;
+  border: 1px solid #dde1e7;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.task-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.task-meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.task-meta span {
+  margin-right: 14px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge-pending {
+  background: #fff3bf;
+  color: #856404;
+}
+
+.badge-progress {
+  background: #d0ebff;
+  color: #1864ab;
+}
+
+.badge-completed {
+  background: #d3f9d8;
+  color: #1b6830;
+}
+
+/* ─── Empty state ─── */
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+  font-size: 14px;
+  background: #fff;
+  border: 1px dashed #dde1e7;
+  border-radius: 8px;
+}
+
+/* ─── Project list ─── */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.project-tag {
+  background: #e8edf9;
+  color: #3b5bdb;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
