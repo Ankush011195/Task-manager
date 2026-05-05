@@ -24,7 +24,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   const getUsers = async () => {
   const res = await fetch("https://task-manager-ibsf.onrender.com/api/users", {
-    headers: { Authorization: token },
+    headers: { Authorization: `Bearer ${token}` },
   });
   const result = await res.json();
   setUsers(result);
@@ -32,7 +32,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   const fetchDashboard = async () => {
     const res = await fetch("https://task-manager-ibsf.onrender.com/api/tasks/dashboard", {
-      headers: { Authorization: token },
+      headers: { Authorization: `Bearer ${token}` },
     });
     const result = await res.json();
     setData(result);
@@ -40,7 +40,7 @@ const [assignedTo, setAssignedTo] = useState("");
 
   const getTasks = async () => {
     const res = await fetch("https://task-manager-ibsf.onrender.com/api/tasks", {
-      headers: { Authorization: token },
+      headers: { Authorization: `Bearer ${token}` },
     });
     const result = await res.json();
     setTasks(result);
@@ -50,7 +50,7 @@ const [assignedTo, setAssignedTo] = useState("");
   
   const getProjects = async () => {
     const res = await fetch("https://task-manager-ibsf.onrender.com/api/projects", {
-      headers: { Authorization: token },
+      headers: { Authorization: `Bearer ${token}` },
     });
     const result = await res.json();
     setProjects(result);
@@ -64,7 +64,7 @@ const [assignedTo, setAssignedTo] = useState("");
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ name: projectName }),
     });
@@ -80,7 +80,7 @@ const [assignedTo, setAssignedTo] = useState("");
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         title,
@@ -102,7 +102,7 @@ const [assignedTo, setAssignedTo] = useState("");
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ status }),
     });
