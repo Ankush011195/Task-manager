@@ -6,8 +6,10 @@ function App() {
   const token = localStorage.getItem("token");
   const path = window.location.pathname;
 
+  console.log("Current path:", path); // debug ke liye
+
   if (token) return <Dashboard />;
-  if (path.includes("register")) return <Register />;
+  if (path === "/register") return <Register />;
   return <Login />;
 }
 
