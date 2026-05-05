@@ -55,7 +55,10 @@ function Register() {
 
       <button
         className="secondary-btn"
-        onClick={() => (window.location.pathname = "/")}
+       onClick={() => {
+  window.history.pushState({}, "", "/");
+  window.location.reload();
+}}
       >
         Back to Login
       </button>

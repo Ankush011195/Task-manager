@@ -53,7 +53,10 @@ function Login() {
 
       <button
         className="secondary-btn"
-        onClick={() => (window.location.pathname = "/register")}
+       onClick={() => {
+  window.history.pushState({}, "", "/register");
+  window.location.reload();
+}}
       >
         Create Account
       </button>
