@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     if (!email || !password) return alert("All fields are required");
@@ -20,7 +22,6 @@ function Login() {
 
       if (!res.ok) return alert(data.message);
 
-      // ✅ token + user dono save ho rahe hain
       localStorage.setItem("token", data.token);
       localStorage.setItem("userId", data.user.id);
       localStorage.setItem("userRole", data.user.role);
@@ -51,13 +52,7 @@ function Login() {
         Sign In
       </button>
 
-      <button
-        className="secondary-btn"
-       onClick={() => {
-  window.history.pushState({}, "", "/register");
-  window.location.reload();
-}}
-      >
+      <button className="secondary-btn" onClick={() => navigate("/register")}>
         Create Account
       </button>
     </div>

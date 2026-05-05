@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handleRegister = async () => {
     if (!name || !email || !password) return alert("All fields are required");
@@ -23,7 +26,7 @@ function Register() {
       if (!res.ok) return alert(data.message);
 
       alert(data.message);
-      window.location.pathname = "/";
+   navigate("/");
     } catch (err) {
       alert("Something went wrong");
     }
@@ -53,13 +56,7 @@ function Register() {
         Create Account
       </button>
 
-      <button
-        className="secondary-btn"
-       onClick={() => {
-  window.history.pushState({}, "", "/");
-  window.location.reload();
-}}
-      >
+      <button className="secondary-btn" onClick={() => navigate("/")}>
         Back to Login
       </button>
     </div>
